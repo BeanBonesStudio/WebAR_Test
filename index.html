@@ -1,0 +1,37 @@
+
+<html>
+    <head>
+      <link rel="icon" href="data:,">
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.1/dist/mindar-image-aframe.prod.js"></script>
+      <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+
+      <script src="core.js"></script>
+    </head>
+    <body>
+      <a-scene renderer ="antialias: true; colorManagement: true;"  mindar-image="imageTargetSrc: ./targets.mind;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+          
+          
+        <a-assets>
+            <img id="card" src="./RitoBitches.png" />
+            <!-- <a-asset-item id="avatarModel" src="./drinkthings.gltf"></a-asset-item> -->
+            <a-asset-item id="3dCard" src="./bitchesCard.gltf"></a-asset-item>
+            <a-asset-item id="cullObject" src="./CullObject.gltf"></a-asset-item>
+            <a-asset-item id="monkey" src="./Monkey.gltf"></a-asset-item>
+        </a-assets>
+            
+        <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+        
+        <a-entity mindar-image-target="targetIndex: 0">
+           <!-- <a-plane src="#card" position="0 0 0" height="1.61" width=".96" rotation="0 0 0" ></a-plane> -->
+           <a-gltf-model rotation="90 0 0 " position="0 0 0" scale="1 1 1" src="#cullObject"  collada-cloak></a-gltf-model>
+           <a-gltf-model rotation="90 0 0 " position="0 0 0" scale="1 1 1" src="#3dCard"></a-gltf-model>
+           <a-gltf-model rotation="90 0 0 " position="0 0 0" scale="1 1 1" src="#monkey" animation-mixer></a-gltf-model>
+        </a-entity>
+
+
+      </a-scene>
+    </body>
+  </html>
